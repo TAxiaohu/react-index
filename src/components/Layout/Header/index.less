@@ -1,0 +1,70 @@
+.Header {
+    background-color: #444;
+    color: #fff;
+    width: 100%;
+    z-index: 99;
+    border: none;
+    border-radius: 0;
+    padding: 0 50px;
+    margin-bottom: 0;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    transition: all .3s;
+}
+
+.scrollNavbar {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    transition: all .3s;
+}
+
+.scrollLogo {
+    margin: 5px !important;
+    font-size: 22px;
+    transition: all .3s;
+}
+
+.title {
+    font-size: 30px;
+    margin: 15px;
+    color: #fff;
+}
+
+.navBar {
+    position: relative;
+    text-align: center;
+    border: 1px solid #888;
+    box-shadow: 0 0 5px #888;
+    transition: all 0.3s;
+    padding: 0;
+    margin: 20px 0;
+    li {
+        float: left;
+        position: relative;
+        display: block;
+        list-style: none;
+        width: 90px;
+        &:first-child {
+            position: absolute;
+            height: 40px;
+            background-color: #2BC3AC;
+            transition: all .5s;
+        }
+        a {
+            color: #fff;
+            padding: 10px 0;
+            line-height: 20px;
+            display: block;
+            position: relative;
+        }
+    }
+}
+
+.scrollNav {
+    margin: 10px 0 !important;
+    transition: all .3s;
+}

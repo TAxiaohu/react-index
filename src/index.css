@@ -1,0 +1,10 @@
+html,
+body,
+:global(#root) {
+    height: 100%;
+    font-family: "HelveticaÂ Neue", Â Helvetica, Â Arial, "PingFangÂ SC", "HiraginoÂ SansÂ GB", "HeitiÂ SC", "Microsoft YaHei", "WenQuanYiÂ MicroÂ Hei", Â sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
