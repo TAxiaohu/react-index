@@ -14,7 +14,19 @@ function RouterConfig({ history, app }) {
     {
       path: '/about',
       comopnent: dynamic({
-        component: () => import('./routes/Products'),
+        component: () => import('./routes/About'),
+      }),
+    },
+    {
+      path: '/case',
+      comopnent: dynamic({
+        component: () => import('./routes/Case'),
+      }),
+    },
+    {
+      path: '/contact',
+      comopnent: dynamic({
+        component: () => import('./routes/Contact'),
       }),
     }
   ];

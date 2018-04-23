@@ -5,6 +5,22 @@ body,
     font-family: "HelveticaÂ Neue", Â Helvetica, Â Arial, "PingFangÂ SC", "HiraginoÂ SansÂ GB", "HeitiÂ SC", "Microsoft YaHei", "WenQuanYiÂ MicroÂ Hei", Â sans-serif;
 }
 
-a{
-    text-decoration: none;
+a {
+    text-decoration: none !important;
+}
+
+a:focus {
+    text-decoration: none !important;
+}
+
+a:link {
+    text-decoration: none !important;
+}
+
+a:active {
+    text-decoration: none !important;
+}
+
+a:visited {
+    text-decoration: none !important;
 }
