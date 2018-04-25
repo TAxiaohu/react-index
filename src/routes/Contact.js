@@ -22,6 +22,7 @@ class Contact extends Component {
         setTimeout(() => {
           this.setState({ loading: false });
           message.success('发送成功！');
+          this.props.form.resetFields();
         }, 1500);
       }
     });
@@ -50,7 +51,9 @@ class Contact extends Component {
                 </FormItem>
                 <FormItem>
                   {getFieldDecorator('phone', {
-                    rules: [{ required: true, message: '请输入您的联系电话' }],
+                    rules: [
+                      { required: true, message: '请输入您的联系电话' }
+                    ],
                   })(
                     <Input placeholder="联系电话" />
                   )}

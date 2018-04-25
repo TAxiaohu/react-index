@@ -5,6 +5,7 @@ import styles from './index.less';
 
 const nvbIndexMap = {
   '#/': 0,
+  '#/home': 0,
   '#/about': 1,
   '#/case': 2,
   // '#/news': 3,
@@ -15,13 +16,14 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      left: nvbIndexMap[window.location.hash] * 90,
+      left: 0,
       scrollNav: false,
       pathname: window.location.hash,
     }
   }
 
   componentDidMount() {
+    this.handleHash();
     window.addEventListener('scroll', this.handleScroll);
   };
 
@@ -30,8 +32,11 @@ class Header extends Component {
   };
 
   componentWillReceiveProps() {
+    this.handleHash();
+  }
+
+  handleHash = () => {
     const { hash } = window.location;
-    console.log(hash);
     this.setState({ pathname: hash, left: nvbIndexMap[hash] * 90 })
   }
 
@@ -53,6 +58,10 @@ class Header extends Component {
     this.setState({ left: nvbIndexMap[pathname] * 90 });
   }
 
+  handleClick = (index, pathname) => {
+    this.setState({ left: index * 90, pathname });
+  }
+
   render() {
     const { scrollNav } = this.state;
     return (
@@ -63,19 +72,19 @@ class Header extends Component {
         <ul className={[styles.navBar, scrollNav && styles.scrollNav].join(' ')}>
           <li style={{ left: `${this.state.left}px` }}></li>
           <li onMouseEnter={() => this.handleEnter(0)} onMouseLeave={this.handleMouse}>
-            <Link to="/">网站首页</Link>
+            <Link to="/" onClick={() => this.handleClick(0, '#/')}>网站首页</Link>
           </li>
           <li onMouseEnter={() => this.handleEnter(1)} onMouseLeave={this.handleMouse}>
-            <Link to="/about">关于我们</Link>
+            <Link to="/about" onClick={() => this.handleClick(1, '#/about')}>关于我们</Link>
           </li>
           <li onMouseEnter={() => this.handleEnter(2)} onMouseLeave={this.handleMouse}>
-            <Link to="/case">服务案列</Link>
+            <Link to="/case" onClick={() => this.handleClick(2, '#/case')}>服务案列</Link>
           </li>
           {/* <li onMouseEnter={() => this.handleEnter(3)} onMouseLeave={this.handleMouse}>
             <Link to="/news">新闻中心</Link>
           </li> */}
           <li onMouseEnter={() => this.handleEnter(3)} onMouseLeave={this.handleMouse}>
-            <Link to="/contact">联系我们</Link>
+            <Link to="/contact" onClick={() => this.handleClick(3, '#/contact')}>联系我们</Link>
           </li>
         </ul>
       </div>
